@@ -236,7 +236,6 @@ useEffect(() => {
     <S.Footer>
         <S.FooterText>@2026 CCC 마니또. Life Transforming Communitas</S.FooterText>
     </S.Footer>
-
     </S.Wrapper>
   );
 }

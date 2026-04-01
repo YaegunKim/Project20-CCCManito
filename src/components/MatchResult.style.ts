@@ -385,14 +385,15 @@ export const S = {
   // ── 푸터 ──
 
   Footer: styled.div`
-    position: absolute;
-    bottom: 0;
     width: 100%;
-    background: #8040f0;
-    padding: 12px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #6e2ef2;
+    padding: 10px;
+    box-sizing: border-box;
     z-index: 20;
-    display: flex;
-    justify-content: center;
   `,
 
   FooterText: styled.p`
