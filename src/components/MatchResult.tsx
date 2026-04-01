@@ -79,7 +79,6 @@ const UserIcon = () => (
 
 // ── 메인 ─────────────────────────────────────────────────
 
-const BRAND_COLORS = ["#8a2be2", "#4169e1", "#9370db"];
 const INFO_FIELDS = (result: ResultEntry) => [
   { label: "학과", value: result.receiverMajor },
   { label: "전화번호", value: result.receiverPhone },
