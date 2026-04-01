@@ -133,6 +133,7 @@ export const S = {
     align-items: center;
     padding: 40px 20px 120px;
     overflow-y: auto;
+    overflow-x: hidden;
 
     &::-webkit-scrollbar { display: none; }
     -ms-overflow-style: none;

@@ -96,7 +96,7 @@ export default function FindManito() {
           <S.heartIcon aria-hidden focusable="false" />
         </S.title>
         <S.description>
-          나의 전화번호와 생년월일을 입력하고 이번 달 나의 마니또를 확인해보세요!
+          나의 전화번호와 생년월일을 입력하고 {`\n`} 이번 달 나의 마니또를 확인해보세요!
         </S.description>
         <S.InputContainer>
           <S.Input
@@ -118,7 +118,7 @@ export default function FindManito() {
             onChange={(e) => setStudentId(e.target.value)}
           />
           {error && <S.ErrorText>{error}</S.ErrorText>}
-          <S.Button onClick={handleFind}>찾기</S.Button>
+          <S.Button onClick={handleFind}>내 마니또 확인하기</S.Button>
         </S.InputContainer>
       </S.Content>
     </S.Container>

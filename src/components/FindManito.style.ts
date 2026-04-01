@@ -4,7 +4,7 @@ import { ReactComponent as SearchSvg } from "../Assest/search.svg";
 
 export const S = {
     Container: styled.div`
-        width: 100%;
+        width: 90%;
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -56,14 +56,19 @@ export const S = {
   description: styled.span`
     font-size: 3vw;
     font-weight: 500;
+    white-space: pre-line;
   `,
     InputContainer: styled.div`
+        width: 80%;
         display: flex;
         flex-direction: column;
+        align-items: center;
+        gap: 5px;
     `,
     Input: styled.input`
         width: 100%;
         height: 100%;
+        padding: 10px;
         border: 1px solid #ccc;
         border-radius: 5px;
         font-size: 3vw;

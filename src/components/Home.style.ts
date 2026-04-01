@@ -1,7 +1,12 @@
 import styled from "@emotion/styled";
 import BackgroundImg from "../Assest/ChatGPT_Image_bg02.png";
 import { ReactComponent as HeartSvg } from "../Assest/heart.svg";
+import { keyframes } from "@emotion/react";
 
+const floatRotate = keyframes`
+  0%, 100% { transform: translateY(0) rotate(var(--rot, 0deg)); }
+  50% { transform: translateY(-15px) rotate(calc(var(--rot, 0deg) + 3deg)); }
+`;
 
 /** 전체 화면: 배경은 아래 레이어, 위에 UI 쌓기 */
 export const S = {
@@ -9,6 +14,47 @@ export const S = {
     width: 100%;
     height: 100vh;
   `,
+
+    // ── 스티커 노트 ──
+
+    StickerNote: styled.div<{ top: number; right?: number; left?: number; rotate: number; size: number; bg: string; delay?: string }>`
+    position: absolute;
+    top: ${(p) => p.top}px;
+    ${(p) => p.right !== undefined ? `right: ${p.right}px;` : ""}
+    ${(p) => p.left !== undefined ? `left: ${p.left}px;` : ""}
+    width: ${(p) => p.size}px;
+    height: ${(p) => p.size}px;
+    background: ${(p) => p.bg};
+    border-radius: 2px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: rotate(${(p) => p.rotate}deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: ${floatRotate} 6s ease-in-out infinite;
+    animation-delay: ${(p) => p.delay ?? "0s"};
+  `,
+
+  StickerTape: styled.div`
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 2px;
+  `,
+
+  StickerText: styled.p`
+    font-size: 10px;
+    color: #166534;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.4;
+    margin: 0;
+  `,
+  // ── 컨텐츠 ──
   Content: styled.div`
     position: relative;
     width: 100%;
@@ -25,9 +71,11 @@ export const S = {
     align-items: center;
     flex-direction: column;
     gap: 10px;
+    padding-bottom: 100px;
   `,
 
   LogoContainer: styled.div`
+    margin-top: 100px;
     width: 100%;
     height: 100%;
     display: flex;
